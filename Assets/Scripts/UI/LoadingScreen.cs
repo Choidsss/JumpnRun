@@ -7,8 +7,8 @@ namespace JumpNRun
 {
     public class LoadingScreen : MonoBehaviour
     {
-        public GameObject loadingUI; // 로딩 UI 패널
-        public Slider progressBar;   // 진행바
+        [SerializeField] GameObject loadingUI; // 로딩 UI 패널
+        [SerializeField] Slider progressBar;   // 진행바
 
         public void LoadScene(string sceneName)
         {
