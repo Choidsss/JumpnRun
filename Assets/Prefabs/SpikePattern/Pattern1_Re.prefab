@@ -94,7 +94,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 755bf525b5850c644841faaee76a83ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 8
+  _speed: 9
 --- !u!1001 &1044304818137066942
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -104,12 +104,16 @@ PrefabInstance:
     m_TransformParent: {fileID: 2914136256689364394}
     m_Modifications:
     - target: {fileID: 4116198115702676509, guid: d08aa5d08ab45a0479c4724aa9abf1ca, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.3229002
+      objectReference: {fileID: 0}
+    - target: {fileID: 4116198115702676509, guid: d08aa5d08ab45a0479c4724aa9abf1ca, type: 3}
       propertyPath: m_LocalPosition.x
       value: 21.45
       objectReference: {fileID: 0}
     - target: {fileID: 4116198115702676509, guid: d08aa5d08ab45a0479c4724aa9abf1ca, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.030000001
       objectReference: {fileID: 0}
     - target: {fileID: 4116198115702676509, guid: d08aa5d08ab45a0479c4724aa9abf1ca, type: 3}
       propertyPath: m_LocalPosition.z
@@ -166,12 +170,16 @@ PrefabInstance:
     m_TransformParent: {fileID: 2914136256689364394}
     m_Modifications:
     - target: {fileID: 4116198115702676509, guid: d08aa5d08ab45a0479c4724aa9abf1ca, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.3229002
+      objectReference: {fileID: 0}
+    - target: {fileID: 4116198115702676509, guid: d08aa5d08ab45a0479c4724aa9abf1ca, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.15
       objectReference: {fileID: 0}
     - target: {fileID: 4116198115702676509, guid: d08aa5d08ab45a0479c4724aa9abf1ca, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.03
       objectReference: {fileID: 0}
     - target: {fileID: 4116198115702676509, guid: d08aa5d08ab45a0479c4724aa9abf1ca, type: 3}
       propertyPath: m_LocalPosition.z
@@ -228,12 +236,16 @@ PrefabInstance:
     m_TransformParent: {fileID: 2914136256689364394}
     m_Modifications:
     - target: {fileID: 4116198115702676509, guid: d08aa5d08ab45a0479c4724aa9abf1ca, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.3229002
+      objectReference: {fileID: 0}
+    - target: {fileID: 4116198115702676509, guid: d08aa5d08ab45a0479c4724aa9abf1ca, type: 3}
       propertyPath: m_LocalPosition.x
       value: 10.23
       objectReference: {fileID: 0}
     - target: {fileID: 4116198115702676509, guid: d08aa5d08ab45a0479c4724aa9abf1ca, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.030000001
       objectReference: {fileID: 0}
     - target: {fileID: 4116198115702676509, guid: d08aa5d08ab45a0479c4724aa9abf1ca, type: 3}
       propertyPath: m_LocalPosition.z

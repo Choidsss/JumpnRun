@@ -22,6 +22,7 @@ namespace JumpNRun
             {
                 return;
             }
+            //Debug.Log("»Æ¿Œ");
             Destroy(collision.gameObject);
             _isPlayerDead = true;
 

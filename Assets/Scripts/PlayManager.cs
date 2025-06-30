@@ -60,6 +60,9 @@ namespace JumpNRun
         //    UnityEngine.SceneManagement.SceneManager.LoadScene(
         //        UnityEngine.SceneManagement.SceneManager.GetActiveScene().name);
         //}
+
+        
+
         [SerializeField] TextMeshProUGUI _messageText;           // 텍스트 컴포넌트 (문구 변경용)
         [SerializeField] GameObject _pauseButton;
 
@@ -81,6 +84,8 @@ namespace JumpNRun
         [SerializeField] GameObject _player;
 
         [SerializeField] GameObject _pauseMenuUI;
+        
+        //[SerializeField] Rigidbody[] _rigidbodies;  // 수동으로 설정
 
         Coroutine _messageCoroutine;
 
@@ -101,10 +106,16 @@ namespace JumpNRun
             //_overPanel.SetActive(false);
 
             //StartCoroutine(ShowLoadingThenStartPanel());
-            
-                Time.timeScale = 0f;
 
+            Time.timeScale = 0f;
+
+                _loadingPanel.SetActive(true);
                 _pauseButton.SetActive(false); // 처음엔 버튼 숨기기
+                _startPanel.SetActive(false);
+                _overPanel.SetActive(false);
+                _settingPanel.SetActive(false);
+                _messageText.gameObject.SetActive(false);
+                _pauseMenuUI.SetActive(false);
 
                 if (SkipLoadingOnRetry)
                 {
@@ -114,11 +125,6 @@ namespace JumpNRun
                     return;
                 }
 
-                _loadingPanel.SetActive(true);
-                _startPanel.SetActive(false);
-                _overPanel.SetActive(false);
-                _settingPanel.SetActive(false);
-                _messageText.gameObject.SetActive(false);
 
                 StartCoroutine(ShowLoadingThenStartPanel());
 
@@ -202,6 +208,8 @@ namespace JumpNRun
 
                 _pauseMenuUI.SetActive(true);
                 _startPanel.SetActive(false); // Pause 시 Start 패널 꺼짐
+
+                //PausePhysics();
             }
             else
             {
@@ -211,6 +219,8 @@ namespace JumpNRun
 
                 _pauseMenuUI.SetActive(false);
                 _startPanel.SetActive(false); // Resume 시 Start 패널도 꺼둠, 게임 플레이 화면 유지
+
+                //ResumePhysics();
             }
 
             AudioListener.pause = isPaused;
@@ -284,6 +294,30 @@ namespace JumpNRun
             _messageText.gameObject.SetActive(false);
             _messageCoroutine = null;
         }
+
+        //void PausePhysics()
+        //{
+        //    foreach (Rigidbody rb in _rigidbodies)
+        //    {
+        //        if (rb != null)
+        //        {
+        //            rb.isKinematic = true;
+        //            // velocity 저장 및 복원 API가 없으면 여기서 포기
+        //        }
+        //    }
+        //}
+
+        //void ResumePhysics()
+        //{
+        //    foreach (Rigidbody rb in _rigidbodies)
+        //    {
+        //        if (rb != null)
+        //        {
+        //            rb.isKinematic = false;
+        //            // velocity 복원 불가능하면 그냥 물리 다시 활성화
+        //        }
+        //    }
+        //}
 
     }
 }
