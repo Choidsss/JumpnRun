@@ -61,7 +61,9 @@ namespace JumpNRun
         //        UnityEngine.SceneManagement.SceneManager.GetActiveScene().name);
         //}
 
-        
+        [SerializeField] GameObject _leftButton;
+        [SerializeField] GameObject _righttButton;
+        [SerializeField] GameObject _jumpButton;
 
         [SerializeField] TextMeshProUGUI _messageText;           // 텍스트 컴포넌트 (문구 변경용)
         [SerializeField] GameObject _pauseButton;
@@ -116,6 +118,9 @@ namespace JumpNRun
                 _settingPanel.SetActive(false);
                 _messageText.gameObject.SetActive(false);
                 _pauseMenuUI.SetActive(false);
+                _leftButton.SetActive(false);
+                _righttButton.SetActive(false);
+                _jumpButton.SetActive(false);
 
                 if (SkipLoadingOnRetry)
                 {
@@ -167,6 +172,10 @@ namespace JumpNRun
             Time.timeScale = 1.0f;
             _startPanel.SetActive(false);
             _pauseButton.SetActive(true);   // 게임 시작 시 Pause 버튼 보이게
+            _leftButton.SetActive(true);
+            _righttButton.SetActive(true);
+            _jumpButton.SetActive(true);
+                
         }
 
         public void GameOver()
@@ -174,6 +183,9 @@ namespace JumpNRun
             Time.timeScale = 0f;
             _overPanel.SetActive(true);
             _pauseButton.SetActive(false);
+            _leftButton.SetActive(false);
+            _righttButton.SetActive(false);
+            _jumpButton.SetActive(false);
 
             if (_timer != null && _finalTimer != null)
             {

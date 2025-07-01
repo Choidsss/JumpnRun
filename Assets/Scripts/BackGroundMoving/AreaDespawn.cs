@@ -6,11 +6,11 @@ namespace JumpNRun
     {
         [SerializeField] Pattern6Fire _fire;
         [SerializeField] PatternSpawner _sapwner;
+        [SerializeField] float _addDistance = 3.7f;
 
         BoxCollider2D _collider;
 
         float _offsetX;
-        float _addDistance = 3.7f;
 
        
         private void Start()

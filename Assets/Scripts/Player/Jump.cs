@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 namespace JumpNRun
@@ -61,7 +62,7 @@ namespace JumpNRun
         //     }
         // }
 
-        Vector2 _move;
+        //Vector2 _move;
         Rigidbody2D _rigidBody;
 
         [SerializeField] float _jumpForce = 7f;
@@ -70,6 +71,7 @@ namespace JumpNRun
         int _maxJumpCount = 2;
         int _jumpCount = 0;
         float _horizontal;
+        float _mobileHorizontal = 0; // 모바일 입력만 따로 저장
 
         void Start()
         {
@@ -85,7 +87,10 @@ namespace JumpNRun
             }
 
             // �¿� �̵� �Է� �ޱ�
-            _horizontal = Input.GetAxisRaw("Horizontal");
+            float keyBoardInput = Input.GetAxisRaw("Horizontal");
+
+            _horizontal = keyBoardInput + _mobileHorizontal;
+            _horizontal = Mathf.Clamp(_horizontal, -1f, 1f);
         }
 
         void FixedUpdate()
@@ -112,6 +117,30 @@ namespace JumpNRun
             if (collision.gameObject.layer == 10) // ������ ������ ���̾�
             {
                 _jumpCount = 0; // ���� ����� �� ���� ī��Ʈ ����
+            }
+        }
+
+        // 🔽 모바일용 입력 메서드들
+        public void MoveLeftMobile()
+        {
+            _mobileHorizontal = -1f;
+        }
+
+        public void MoveRightMobile()
+        {
+            _mobileHorizontal = 1f;
+        }
+
+        public void StopMoveMobile()
+        {
+            _mobileHorizontal = 0f;
+        }
+
+        public void JumpMobile()
+        {
+            if (_jumpCount < _maxJumpCount)
+            {
+                Jumping();
             }
         }
     }
