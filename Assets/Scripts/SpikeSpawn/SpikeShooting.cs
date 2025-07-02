@@ -11,13 +11,11 @@ namespace JumpNRun
         void Start()
         {
             _rigid = GetComponent<Rigidbody2D>();
-        }
 
-        // Update is called once per frame
-        void Update()
-        {
+            //Debug.Log("»Æ¿Œ");
             Vector2 force = new Vector2(_shootingForce, 0f);
             _rigid.AddForce(force, ForceMode2D.Impulse);
         }
+
     }
 }

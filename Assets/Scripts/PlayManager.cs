@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 
 namespace JumpNRun
 {
@@ -306,6 +307,26 @@ namespace JumpNRun
             _messageText.gameObject.SetActive(false);
             _messageCoroutine = null;
         }
+
+        public void GoToMainMenuFromPause()
+        {
+            // 시간, 오디오 재설정
+            Time.timeScale = 1f;
+            isPaused = false;
+            AudioListener.pause = false;
+
+            // 로딩 생략 + StartPanel부터 보여지게
+            SkipLoadingOnRetry = true;
+
+            // 현재 씬 다시 로드 (초기화)
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
+
+
+        //// 필요하다면 게임 내 버튼들 숨기기
+        //_leftButton.SetActive(false);
+        //_righttButton.SetActive(false);
+        //_jumpButton.SetActive(false);
 
         //void PausePhysics()
         //{

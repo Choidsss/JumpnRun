@@ -9,8 +9,8 @@ namespace JumpNRun
     {
         [SerializeField] GameObject[] prefabs;
 
-        Vector2 _spawnAreaMin = new Vector2(-2f, -2f);
-        Vector2 _spawnAreaMax = new Vector2(2f, 2f);
+        Vector2 _spawnAreaMin = new Vector2(-2f, -1f);
+        Vector2 _spawnAreaMax = new Vector2(2f, 1f);
 
         int _count = 0;
         int _maxCount = 3;

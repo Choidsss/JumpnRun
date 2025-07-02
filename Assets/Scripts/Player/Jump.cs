@@ -91,12 +91,10 @@ namespace JumpNRun
 
             _horizontal = keyBoardInput + _mobileHorizontal;
             _horizontal = Mathf.Clamp(_horizontal, -1f, 1f);
-        }
 
-        void FixedUpdate()
-        {
             HorizontalMove();
         }
+
 
         void Jumping()
         {
