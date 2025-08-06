@@ -19,7 +19,7 @@ namespace JumpNRun
             // MobileAds.Initialize(initstatus => { });
 
             //광고단위 ID넣기
-            string adUnitID = "ca-app-pub-3940256099942544/9214589741";
+            string adUnitID = "ca-app-pub-2692114820896098/4440518824";
 
             //배너 광고 생성, ex)위치는 하단
             _bannerview = new BannerView(adUnitID, AdSize.Banner, AdPosition.Top);
